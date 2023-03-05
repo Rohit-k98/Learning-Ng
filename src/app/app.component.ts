@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import { Game1Component } from '../app/child1/game1/game1.component'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'LearningNG';
+
 }
+

@@ -1,0 +1,48 @@
+<div class="container row m-2">
+    <div class="container bg-primary bg-opacity-25 col form-check m-2 pt-4 ps-3">
+        <label for="name">Name :</label><br>
+        <input type="text" id="name" [formControl]="name">
+        <p> Value : {{name.value}}</p>
+        <button class="btn btn-outline-success" type="submit" (click)="updateName()">Update Name</button>
+        <button class="btn btn-outline-danger mt-1" type="submit" (click)="resetName()">Reset Name</button>
+    </div>
+    
+    <div class="container bg-info bg-opacity-25 m-2 col form-check pt-4 ps-3">
+        <form [formGroup]="fullNameForm">
+            <label class="form-label" >First Name :</label><br>
+            <input type="text" formControlName="firstName"><br>
+            <label class="form-label">Last Name :</label><br>
+            <input type="text" formControlName="lastName"><br>
+            <button class="mt-2 btn btn-info" (click)="updatefullNameForm()" >Update all</button>
+        </form>
+    </div>
+    
+    <div class="bg-success bg-opacity-25 container m-2 col form-check pt-4 ps-3">
+    <form [formGroup]="fbForm" (ngSubmit)="addUserData()">
+            <label class="form-label">User</label><br>
+            <input type="text" formControlName="User">
+            <br>
+            <label class="form-label">Password</label><br>
+            <input type="text" formControlName="Password"> <br>
+            <button class="mt-2 btn btn-secondary">Register</button>
+        </form>
+        <hr>
+        <p>User Details</p>
+        <table class="table table-dark table-striped-columns">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">User</th>
+                <th scope="col">Password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of userData;let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{user.User}}</td>
+                <td>{{user.Password}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<!-- <p>{{testing}}</p> -->
+<!-- <app-data-form></app-data-form> -->
+<div class="m-3 ">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">S.N.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Species</th>
+            <th scope="col" class="text-center">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rick of rickData.results">
+            <th scope="row">{{rick.id}}</th>
+            <td>{{rick.name}}</td>
+            <td>{{rick.species}}</td>
+            <td class="text-center"><img src={{rick.image}} class="img-thumbnail" alt="..." width="150" height="150"></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
